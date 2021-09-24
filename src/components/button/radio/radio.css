@@ -1,0 +1,58 @@
+.radio > label {
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 23px;
+  color: #222;
+}
+
+.custom_radio:checked,
+.custom_radio:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+.custom_radio:checked + label,
+.custom_radio:not(:checked) + label
+{
+    position: relative;
+    padding-left: calc(20px + 4px);
+    cursor: pointer;
+    display: inline-block;
+}
+
+.custom_radio:checked + label:before,
+.custom_radio:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #000;
+    border-radius: 100%;
+    background: #fff;
+}
+
+.custom_radio:checked + label:after,
+.custom_radio:not(:checked) + label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #000000;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    transition: all 0.2s ease;
+}
+
+.custom_radio:not(:checked) + label:after {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.custom_radio:checked + label:after {
+    opacity: 1;
+    transform: scale(1);
+}

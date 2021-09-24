@@ -1,0 +1,34 @@
+
+.notification_wrap {
+  position: fixed;
+  top: calc(86px - 8px + 20px);
+  right: calc(20px + 126px + 24px + 10px + 10px);
+}
+
+.notification_wrap .dropdown{
+  
+	/* width: 222px; */
+  /* border: 0.5px solid rgba(0, 0, 0, 0.1); */
+	max-height: calc(91px * 3);
+  
+  /* default scroll */
+  overflow-y: scroll;
+
+  /* not default scroll */
+  /* -ms-overflow-style: none;
+  scrollbar-width: none; */
+
+	background: #fff;
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.125);
+	/* margin: 15px auto 0; */
+	position: relative;
+	display: none;
+}
+
+/* .notification_wrap .dropdown::-webkit-scrollbar{
+  display: none;
+} */
+
+.notification_wrap .dropdown.active{
+	display: block;
+}

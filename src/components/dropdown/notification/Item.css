@@ -1,0 +1,65 @@
+.listItem {
+  padding: 20px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.listItem-box {
+  width: 178px;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  
+  color: #000000;
+}
+
+.explain {
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 15px;
+
+  margin-top: 4px;
+  color: #000000;
+}
+
+.listItem-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: 8px;
+}
+
+.listItem-button:hover { 
+  cursor: pointer;
+}
+
+.accept {
+  background: #3561FF;
+}
+
+.reject {
+  background: #F04949;
+}

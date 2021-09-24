@@ -1,0 +1,70 @@
+/* Header */
+
+header {
+  display: flex;
+  flex-direction: row;
+  padding: 20px 30px; /* 10 20 */
+  position: relative;
+  background: #FFFFFF;
+  box-shadow: 0px 1px 0px #E2E2E2;
+}
+
+header > div.title {
+  /* to text align center */
+  margin: auto;
+
+  height: 24px;
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 24px;
+
+  color: #1F1F1F;
+
+  flex-grow: 1;
+}
+
+.notification_icon{
+  width: 48px;
+  height: 48px;
+}
+
+.notification_icon:hover{
+  cursor: pointer;
+}
+
+.profile_icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  flex-grow: 0;
+  margin-left: 24px;
+}
+
+.profile_icon:hover{
+  cursor: pointer;
+}
+
+
+header > div.profile_icon > img.user_avater {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 100%;
+  overflow: hidden;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+
+  object-fit: cover;
+  margin-left: 24px;
+}
+
+.user_nickname {
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+  color: #000000;
+}

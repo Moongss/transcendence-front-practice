@@ -1,0 +1,43 @@
+
+.profile_menu_wrap {
+
+  position: fixed;
+  top: calc(86px - 8px + 20px);
+  right: calc(20px + 8px + 10px);
+}
+
+.profile_menu_wrap .dropdown{
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+
+  background: #FFFFFF;
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.125);
+
+  position: relative;
+	display: none;
+}
+
+.profile_menu_wrap .dropdown.active{
+	display: block;
+}
+
+.menu {
+  width: calc(126px - 20px);
+  padding: 10px;
+  background: #FFFFFF;
+
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+
+  color: #000000;
+}
+
+.menu:hover {
+  cursor: pointer;
+}

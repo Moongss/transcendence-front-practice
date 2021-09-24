@@ -1,0 +1,209 @@
+.chatroom_setting_modal_wrap {
+  /* width: 544px; */
+  
+  background: #FFFFFF;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+
+  padding: 32px 24px;
+
+  /* 팝업이 열릴때 스르륵 열리는 효과 */
+  animation: modal-show .3s;
+  overflow: hidden;
+}
+
+.modal_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.modal_header .title {
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 20px;
+  /* identical to box height */
+  
+  display: flex;
+  align-items: center;
+  
+  /* black */
+  color: #1F1F1F;
+}
+
+.modal_header .close {
+  height: 18px;
+  width: 18px;
+}
+
+.modal_header .close:hover {
+  cursor: pointer;
+}
+
+.chatroom_setting_modal_wrap .explain {
+  margin-top: 12px;
+
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  
+  color: #9C9C9C;
+}
+
+
+
+
+.chatroom_setting_modal_wrap .content {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+
+.content .subtitle {
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
+  width: 60px;
+}
+
+.roomTitle {
+  flex-grow: 1;
+
+  margin-left: 28px;
+  height: 40px;
+  background: #FFFFFF;
+
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  padding: 8px;
+}
+
+.select {
+  flex-grow: 1;
+  margin-left: 28px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+
+.select > div.radio {
+  margin-right: 16px;
+}
+
+.select .password {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.password .password_input {
+  flex-grow: 1;
+  margin-left: 4px;
+  padding: 4px 8px;
+
+  /* what the */
+  width: 100px; 
+
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 23px;
+
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+.protected_wrap {
+  margin-left: calc(60px + 28px);
+  margin-top: 12px;
+
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.protected_wrap .protected_explain {
+  color: #000000;
+}
+
+.protected_wrap .protected_error {
+  color: #FF5C5C;
+}
+
+.submit_wrap {
+  margin-top: 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submit_wrap .submit {
+  padding: 10px 0px;
+
+  width: 200px;
+  height: 40px;
+
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+.submit_wrap .submit_title {
+  text-align: center;
+}
+
+.submit:hover {
+  cursor: pointer;
+}
+
+.modal_background {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal_open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 팝업이 열릴때 스르륵 열리는 효과 */
+  animation: modal-bg-show .3s;
+}
+
+@keyframes modal-show {
+  from {
+      opacity: 0;
+      margin-top: -50px;
+  }
+  to {
+      opacity: 1;
+      margin-top: 0;
+  }
+}
+
+@keyframes modal-bg-show {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
