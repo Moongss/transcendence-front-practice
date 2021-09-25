@@ -14,16 +14,16 @@ function NotificationItem() {
   }
 
   return (
-    <div className="listItem">
-      <div className="listItem-box">
+    <div className="notification_item">
+      <div className="notification_item_box">
         <div className="title">{Title}</div>
         <div className="explain">{Explain}<br/>수락하시겠습니까?</div>
       </div>
-      <div className="listItem-button accept">
-        <img src="/icons/select/accept.png" onClick={handleAcceptEvent}/>
+      <div className="notification_item_button accept">
+        <img className="checkbutton" src="/icons/dropdown/checkbutton/accept.svg" onClick={handleAcceptEvent}/>
       </div>
-      <div className="listItem-button reject">
-        <img src="/icons/select/reject.png" onClick={handleRejectEvent}/>
+      <div className="notification_item_button reject">
+        <img className="checkbutton" src="/icons/dropdown/checkbutton/reject.svg" onClick={handleRejectEvent}/>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 .modal_wrap {
   width: 500px;
-  
+
   background: #FFFFFF;
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
   border-radius: 16px;
@@ -25,17 +25,17 @@
   font-size: 20px;
   line-height: 20px;
   /* identical to box height */
-  
+
   display: flex;
   align-items: center;
-  
+
   /* black */
   color: #1F1F1F;
 }
 
 .modal_header .close {
-  height: 18px;
-  width: 18px;
+  height: 24px;
+  width: 24px;
 }
 
 .modal_header .close:hover {
@@ -50,7 +50,7 @@
   font-weight: normal;
   font-size: 16px;
   line-height: 20px;
-  
+
   color: #9C9C9C;
 }
 
@@ -88,7 +88,7 @@
   line-height: 23px;
   display: flex;
   align-items: center;
-  
+
   color: #000000;
 
   border: hidden;
@@ -124,7 +124,7 @@
   display: flex;
   align-items: center;
   text-align: center;
-  
+
   color: #000000;
 }
 
@@ -147,10 +147,14 @@
   margin-top: 24px;
   color: #FF5C5C;
 }
+/*
+.modal_close {
+  display: none;
+} */
 
 .modal_background {
   display: none;
-  position: fixed;
+  position:fixed;
   top: 0;
   right: 0;
   bottom: 0;

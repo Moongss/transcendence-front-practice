@@ -25,19 +25,3 @@
 	display: block;
 }
 
-.menu {
-  width: calc(126px - 20px);
-  padding: 10px;
-  background: #FFFFFF;
-
-  font-family: Spoqa Han Sans Neo;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-
-  color: #000000;
-}
-
-.menu:hover {
-  cursor: pointer;
-}

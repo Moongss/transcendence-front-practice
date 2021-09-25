@@ -1,4 +1,5 @@
 import React from 'react';
+import ProfileMenuItem from '../../Item/profile/Item';
 import './dropdown.css';
 
 type DropdownProps = {
@@ -13,12 +14,8 @@ function ProfileMenu(prop: DropdownProps) {
       {console.log(prop.isActive)}
 
       <div className={`dropdown ${prop.isActive ? 'active' : 'inactive'}`}>
-        <div className="menu">
-          프로필 보기
-        </div>
-        <div className="menu">
-          환경 설정
-        </div>
+        <ProfileMenuItem title="프로필 보기"/>
+        <ProfileMenuItem title="환경 설정"/>
       </div>
     </div>
   );

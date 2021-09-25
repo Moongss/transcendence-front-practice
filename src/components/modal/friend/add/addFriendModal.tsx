@@ -65,12 +65,12 @@ function AddFriendModal(prop: addFriendModalProps) {
       <div className="modal_wrap">
         <div className="modal_header">
           <div className="title">{Title}</div>
-          <img className="close" src="/icons/modal/close.png" onClick={handleClose}/>
+          <img className="close" src="/icons/modal/close.svg" onClick={handleClose}/>
         </div>
         <div className="explain">{Explain}</div>
         <div className="search">
           <div className="search_bar">
-            <img className="search_icon" src="/icons/modal/search.png"/>
+            <img className="search_icon" src="/icons/searchbar/search.svg"/>
             <input className="search_nickname" type="text" value={input} onChange={handleUserInputChange} placeholder={nickPlaceholder}/>
           </div>
           <div className="submit" onClick={handleSubmitEvent}>

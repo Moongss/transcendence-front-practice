@@ -34,8 +34,8 @@
 }
 
 .modal_header .close {
-  height: 18px;
-  width: 18px;
+  height: 24px;
+  width: 24px;
 }
 
 .modal_header .close:hover {
@@ -134,12 +134,11 @@
 }
 
 .password_open .password_input {
-  flex-grow: 1;
-  margin-left: 4px;
+  margin-left: 8px;
   padding: 4px 8px;
 
   /* what the */
-  width: 100px;
+  width: 118px;
 
   font-family: Spoqa Han Sans Neo;
   font-style: normal;

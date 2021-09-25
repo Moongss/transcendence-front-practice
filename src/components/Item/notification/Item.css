@@ -1,4 +1,4 @@
-.listItem {
+.notification_item {
   padding: 20px;
   background: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -9,7 +9,7 @@
   align-items: center;
 }
 
-.listItem-box {
+.notification_item_box {
   width: 178px;
   height: auto;
 
@@ -24,7 +24,7 @@
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
-  
+
   color: #000000;
 }
 
@@ -39,12 +39,12 @@
   color: #000000;
 }
 
-.listItem-button {
+.notification_item_button {
   width: 32px;
   height: 32px;
   border-radius: 50%;
   overflow: hidden;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,8 +52,12 @@
   margin-left: 8px;
 }
 
-.listItem-button:hover { 
+.notification_item_button:hover {
   cursor: pointer;
+}
+
+.checkbutton {
+  filter: invert(100%) sepia(1%) saturate(2532%) hue-rotate(332deg) brightness(113%) contrast(101%);
 }
 
 .accept {

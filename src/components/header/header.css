@@ -25,13 +25,13 @@ header > div.title {
   flex-grow: 1;
 }
 
-.notification_icon{
-  width: 48px;
-  height: 48px;
-}
-
 .notification_icon:hover{
   cursor: pointer;
+}
+
+.notification_trigger{
+  width: 48px;
+  height: 48px;
 }
 
 .profile_icon {

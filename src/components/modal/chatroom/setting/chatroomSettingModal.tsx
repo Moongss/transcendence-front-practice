@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import RadioButton from '../../../button/radio/radio';
 import './chatroomSettingModal.css';
 
@@ -16,43 +16,34 @@ type chatroomSettingModalProps = {
 
 function ChatroomSettingModal(prop: chatroomSettingModalProps) {
 
-  const Title = "채팅방 생성";
-  const Explain = "채팅방을 만들어 다른 유저와 소통해보세요!";
+  const Title = "채팅방 설정";
+  const Explain = "채팅방 설정을 변경해보세요.";
 
   const roomPlaceholder = "방 제목";
   const buttonTitle = "생성하기";
 
-  const [password, setPassword] = useState("");
-  const [resultText, setResultText] = useState("");
 
   const [explainText, setExplainText] = useState("비밀번호는 숫자 4자리로 구성 가능합니다.");
   const [errorText, setErrorText] = useState("");
-  const resultCode = useRef(Result.Default);
 
   const handleUserInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
     setExplainText("비밀번호는 숫자 4자리로 구성 가능합니다.");
     console.log(Number(e.target.value), e.target.value.length);
-    if (e.target.value.length <= 3)
-      setErrorText("");
-    else if (e.target.value.length == 4 &&
-              (isNaN(Number(e.target.value)) ||
-               (Number(e.target.value) < 0 || Number(e.target.value) > 9999)))
-      setErrorText("비밀번호는 숫자로만 구성 가능합니다.");
-    else if (e.target.value.length > 4)
-      setErrorText("비밀번호는 숫자 4자리로 구성해주세요.");
+    if (e.target.value.length != 4)
+      setErrorText("비밀번호를 숫자 4자리로 구성해주세요.");
+    else if(isNaN(Number(e.target.value)) || (Number(e.target.value) < 0 || Number(e.target.value) > 9999))
+      setErrorText("비밀번호에는 숫자만 입력 가능합니다.");
     else
     {
       setErrorText("");
       setExplainText("");
     }
     console.log(`[DEBUG] user password : `, password);
-
   }
 
   const handleClose = () => {
     setPassword("");
-    setResultText("");
     prop.close();
   }
 
@@ -66,8 +57,20 @@ function ChatroomSettingModal(prop: chatroomSettingModalProps) {
   }
 
   const [selectedInput, setSelectedInput] = useState("");
+  const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    //io.on(getChatroomSettings)
+    // 1. public
+    // 2. private
+    // 3. protected, password
+
+    setSelectedInput("option-3");
+    setPassword("1243");
+  }, []);
 
   const handleChange = (inputValue: string) => {
+    console.log(inputValue);
     setSelectedInput(inputValue);
   };
 
@@ -76,7 +79,7 @@ function ChatroomSettingModal(prop: chatroomSettingModalProps) {
       <div className="chatroom_setting_modal_wrap">
         <div className="modal_header">
           <div className="title">{Title}</div>
-          <img className="close" src="/icons/modal/close.png" onClick={handleClose}/>
+          <img className="close" src="/icons/modal/close.svg" onClick={handleClose}/>
         </div>
         <div className="explain">{Explain}</div>
 
@@ -111,9 +114,9 @@ function ChatroomSettingModal(prop: chatroomSettingModalProps) {
               handleChange={handleChange}
             />
             <div className={selectedInput === "option-3" ? "password_open" : "password_close"}>
-              <img className="password_icon" src="/icons/modal/search.png"/>
+              <img className="password_icon" src="/icons/modal/password.svg"/>
               {/* <input className="password_input" type="password" placeholder="password"/> */}
-              <input className="password_input" type="password" value={password} onChange={handleUserInputChange} placeholder={"password"}/>
+              <input className="password_input" type="password" maxLength={4} value={password} onChange={handleUserInputChange} placeholder={"password"}/>
             </div>
           </div>
         </div>

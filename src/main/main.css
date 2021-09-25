@@ -1,0 +1,26 @@
+.page {
+  display: flex;
+  flex-direction: row;
+}
+
+.page .content {
+  margin: 40px 40px;
+  /* background-color: #ccc; */
+}
+
+.buttonlist {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.buttonlist .left_side, .right_side {
+  width: calc(360px + 24px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.chatroomlist {
+  margin-top: 32px;
+}
