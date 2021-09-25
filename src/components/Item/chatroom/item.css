@@ -1,0 +1,49 @@
+.chatroom_item {
+  width: calc(100%);
+  /* height: 120px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.chatroom_item:hover{
+  cursor: pointer;
+}
+
+.chatroom_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.chatroom_header .chatroom_title {
+  word-break: break-all;
+
+  /* white-space : nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+
+  color: #000000;
+}
+
+.chatroom_member_count {
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 30px;
+
+  color: #000000;
+}

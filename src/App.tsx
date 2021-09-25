@@ -6,9 +6,11 @@ import Header from './components/header/header';
 import Game from './game/components/game';
 import Modal from './game/components/gameSettingModal';
 import Main from './main/main';
+import './App.css';
+
 function App() {
   return (
-	<div>
+	<div className="app">
     <Route path="/" component={Main}/>
 		{/* <Route exact path="/" component={Login}/>
 		<Route path="/main" component={Main}/>

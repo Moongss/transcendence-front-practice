@@ -37,7 +37,7 @@ function EnterPasswordModal(prop: enterPasswordModalProps) {
     if (input == "4242") {
       //io.emit(connect)
       setErrorText("🎉🎉");
-
+      prop.close();
     }
     else
       setErrorText("비밀번호가 틀렸습니다.");

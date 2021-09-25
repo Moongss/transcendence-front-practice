@@ -4,18 +4,18 @@ ul {
   }
 
 ul li {
-text-align: left;
-padding: 4px 15px;
+  text-align: left;
+  padding: 4px 15px;
 }
 
 aside {
   flex-shrink: 0;
 	left: 0;
-	width: 200px;
-	height: 764px;
-	margin: 20px 20px;
-	border-radius: 5px;
-	box-shadow: 0 0 10px rgb(0,0,0, 0.3);
+	width: 360px;
+  height: calc(100vh - 92px);
+  background: #F8F8F8;
+	// border-radius: 5px;
+	// box-shadow: 0 0 10px rgb(0,0,0, 0.3);
 
 	.friendList {
 		ul {

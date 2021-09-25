@@ -1,6 +1,6 @@
 
 .profile_menu_wrap {
-
+  z-index: 1;
   position: fixed;
   top: calc(86px - 8px + 20px);
   right: calc(20px + 8px + 10px);

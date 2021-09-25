@@ -1,5 +1,6 @@
 
 .notification_wrap {
+  z-index: 1;
   position: fixed;
   top: calc(86px - 8px + 20px);
   right: calc(20px + 126px + 24px + 10px + 10px);
