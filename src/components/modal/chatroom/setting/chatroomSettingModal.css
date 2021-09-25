@@ -1,6 +1,6 @@
 .chatroom_setting_modal_wrap {
-  /* width: 544px; */
-  
+  width: 544px;
+
   background: #FFFFFF;
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
   border-radius: 16px;
@@ -25,10 +25,10 @@
   font-size: 20px;
   line-height: 20px;
   /* identical to box height */
-  
+
   display: flex;
   align-items: center;
-  
+
   /* black */
   color: #1F1F1F;
 }
@@ -50,19 +50,15 @@
   font-weight: normal;
   font-size: 16px;
   line-height: 20px;
-  
+
   color: #9C9C9C;
 }
-
-
-
 
 .chatroom_setting_modal_wrap .content {
   margin-top: 24px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* justify-content: space-between; */
 }
 
 .content .subtitle {
@@ -71,7 +67,7 @@
   font-weight: bold;
   font-size: 20px;
   line-height: 25px;
-  width: 60px;
+  width: 70px;
 }
 
 .roomTitle {
@@ -80,6 +76,12 @@
   margin-left: 28px;
   height: 40px;
   background: #FFFFFF;
+
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 23px;
 
   border: 1px solid rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
@@ -100,19 +102,44 @@
   margin-right: 16px;
 }
 
-.select .password {
+.result {
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 21px;
+
+  text-align: center;
+}
+
+.result .success {
+  margin-top: 24px;
+  color: #1B1A1A;
+}
+
+.result .error {
+  margin-top: 24px;
+  color: #FF5C5C;
+}
+
+.select .password_close {
+  display: none;
+  /* visibility: hidden; */
+}
+
+.select .password_open {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.password .password_input {
+.password_open .password_input {
   flex-grow: 1;
   margin-left: 4px;
   padding: 4px 8px;
 
   /* what the */
-  width: 100px; 
+  width: 100px;
 
   font-family: Spoqa Han Sans Neo;
   font-style: normal;
@@ -125,8 +152,12 @@
   box-sizing: border-box;
 }
 
-.protected_wrap {
-  margin-left: calc(60px + 28px);
+.protected_close {
+  display: none;
+}
+
+.protected_open {
+  margin-left: calc(70px + 28px);
   margin-top: 12px;
 
   font-family: Spoqa Han Sans Neo;
@@ -136,11 +167,11 @@
   line-height: 23px;
 }
 
-.protected_wrap .protected_explain {
+.protected_open .protected_explain {
   color: #000000;
 }
 
-.protected_wrap .protected_error {
+.protected_open .protected_error {
   color: #FF5C5C;
 }
 
@@ -162,7 +193,14 @@
   box-sizing: border-box;
 }
 
-.submit_wrap .submit_title {
+.submit .submit_title {
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+
+  display: block;
   text-align: center;
 }
 

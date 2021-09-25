@@ -22,44 +22,47 @@ function ChatroomSettingModal(prop: chatroomSettingModalProps) {
   const roomPlaceholder = "방 제목";
   const buttonTitle = "생성하기";
 
-  const [input, setInput] = useState("");
+  const [password, setPassword] = useState("");
   const [resultText, setResultText] = useState("");
+
+  const [explainText, setExplainText] = useState("비밀번호는 숫자 4자리로 구성 가능합니다.");
+  const [errorText, setErrorText] = useState("");
   const resultCode = useRef(Result.Default);
 
   const handleUserInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.value === "")
+    setPassword(e.target.value);
+    setExplainText("비밀번호는 숫자 4자리로 구성 가능합니다.");
+    console.log(Number(e.target.value), e.target.value.length);
+    if (e.target.value.length <= 3)
+      setErrorText("");
+    else if (e.target.value.length == 4 &&
+              (isNaN(Number(e.target.value)) ||
+               (Number(e.target.value) < 0 || Number(e.target.value) > 9999)))
+      setErrorText("비밀번호는 숫자로만 구성 가능합니다.");
+    else if (e.target.value.length > 4)
+      setErrorText("비밀번호는 숫자 4자리로 구성해주세요.");
+    else
     {
-      setResultText("");
-      resultCode.current = 0;
+      setErrorText("");
+      setExplainText("");
     }
-    setInput(e.target.value);
+    console.log(`[DEBUG] user password : `, password);
+
   }
 
   const handleClose = () => {
-    setInput("");
+    setPassword("");
     setResultText("");
     prop.close();
   }
 
   const handleSubmitEvent = () => {
-    console.log(`userInput : `, input);
 
-    //io.emit -> nickname send
-    //io.on -> get result code
-    if (input == "ina")
-      resultCode.current = 3;
-    else if (input == "yhan")
-      resultCode.current = 1;
-    else
-      resultCode.current = 2;
+    if (errorText == "") {
+      console.log(`emit password : `, password);
+      //io.emit(password) to create gameroom
 
-    //set Result Text
-    if (resultCode.current == Result.AlreadyFriend)
-      setResultText(input + "님과는 이미 친구입니다.");
-    else if (resultCode.current == Result.Success)
-      setResultText("친구 신청을 보냈습니다!");
-    else if (resultCode.current == Result.NotFoundUser)
-      setResultText("존재하지 않는 플레이어입니다. 다시 시도해주세요.");
+    }
   }
 
   const [selectedInput, setSelectedInput] = useState("");
@@ -98,7 +101,7 @@ function ChatroomSettingModal(prop: chatroomSettingModalProps) {
               value="option-2"
               label="Private"
               isChecked={selectedInput === "option-2"}
-              handleChange={handleChange} 
+              handleChange={handleChange}
             />
             <RadioButton
               name="option"
@@ -107,18 +110,18 @@ function ChatroomSettingModal(prop: chatroomSettingModalProps) {
               isChecked={selectedInput === "option-3"}
               handleChange={handleChange}
             />
-            <div className="password">
+            <div className={selectedInput === "option-3" ? "password_open" : "password_close"}>
               <img className="password_icon" src="/icons/modal/search.png"/>
               {/* <input className="password_input" type="password" placeholder="password"/> */}
-              <input className="password_input" type="password" value={input} onChange={handleUserInputChange} placeholder={"password"}/>
+              <input className="password_input" type="password" value={password} onChange={handleUserInputChange} placeholder={"password"}/>
             </div>
           </div>
         </div>
 
         {/* show or not */}
-        <div className="protected_wrap">
-          <div className="protected_explain">비밀번호는 숫자 4자리로 구성 가능합니다.</div>
-          <div className="protected_error">비밀번호 조건이 잘못됐습니다. 다시 시도해주세요.</div>
+        <div className={selectedInput === "option-3" ? "protected_open" : "protected_close"}>
+          <div className="protected_explain">{explainText}</div>
+          <div className="protected_error">{errorText}</div>
         </div>
 
         {/* <div className="result">
@@ -127,7 +130,7 @@ function ChatroomSettingModal(prop: chatroomSettingModalProps) {
 
         <div className="submit_wrap">
           <div className="submit" onClick={handleSubmitEvent}>
-          <div className="submit_title">{buttonTitle}</div>
+            <div className="submit_title">{buttonTitle}</div>
           </div>
         </div>
       </div>
