@@ -12,6 +12,7 @@ import OTP from './auth/otp/otp';
 
 function App() {
   return (
+    // wip
     <div className="app">
       <Route exact path="/" component={Main}/>
       <Route path="/main" component={Main}/>
