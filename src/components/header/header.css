@@ -13,16 +13,20 @@ header > div.title {
   /* to text align center */
   margin: auto;
 
-  height: 24px;
   font-family: Spoqa Han Sans Neo;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
-  line-height: 24px;
 
+  /* 24px */
+  line-height: 52px; 
   color: #1F1F1F;
 
   flex-grow: 1;
+}
+
+header > div.title {
+  cursor: pointer;
 }
 
 .notification_icon:hover{

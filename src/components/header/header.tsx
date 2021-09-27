@@ -10,7 +10,11 @@ import AddFriendModal from '../modal/friend/add/addFriendModal';
 import SideBar from '../sideBar/sideBar';
 import './header.css';
 
-function Header() {
+type headerProps = {
+  isLoggedIn: boolean,
+}
+
+function Header(prop: headerProps) {
 
   const [isNotiOverlayActive, setIsNotiOverlayActive] = useState(false);
   const [isProfileMenuActive, setIsProfileMenuActive] = useState(false);
@@ -66,14 +70,19 @@ function Header() {
       <NotificationOverlay isActive={isNotiOverlayActive}/>
       <ProfileMenu isActive={isProfileMenuActive}/>
       <header>
-        <div className="title"> 42 Pong Pong </div>
-        <div className="notification_icon">
-          <img className="notification_trigger" src={notifyIconURL.on} onClick={handleNotifyDropdown}/>
-        </div>
-        <div className="profile_icon" onClick={handleProfileDropdown}>
-          <div className="user_nickname">chlee</div>
-          <img className="user_avater" src="https://cdn.intra.42.fr/users/chlee.png"/>
-        </div>
+        <div className="title" onClick={() => {if (prop.isLoggedIn) window.location.href = "http://localhost:3000/main"}}> 42 Pong Pong </div>
+        { prop.isLoggedIn
+          ? <>
+              <div className="notification_icon">
+                <img className="notification_trigger" src={notifyIconURL.on} onClick={handleNotifyDropdown}/>
+              </div>
+              <div className="profile_icon" onClick={handleProfileDropdown}>
+                <div className="user_nickname">chlee</div>
+                <img className="user_avater" src="https://cdn.intra.42.fr/users/chlee.png"/>
+              </div>
+            </>
+          : ""
+        }
       </header>
 
       {/* <Button title={"addFriend"} onClick={() => handleModalOpen('addFriend')}></Button>
