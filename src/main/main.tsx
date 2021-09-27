@@ -92,14 +92,14 @@ function Main() {
 
   return (
     <>
-      <Header/>
+      <Header isLoggedIn={true}/>
       <div className="page">
         <SideBar/>
         <div className="content">
           <div className="buttonlist">
             <div className="left_side">
-              <Button title="전체 채팅방" onClick={changeChatroomList(ChatroomCategory.AllChatroomList)}></Button>
-              <Button title="참여중인 채팅방" onClick={changeChatroomList(ChatroomCategory.JoinedChatroomList)}></Button>
+                <Button title="전체 채팅방" onClick={changeChatroomList(ChatroomCategory.AllChatroomList)}></Button>
+                <Button title="참여중인 채팅방" onClick={changeChatroomList(ChatroomCategory.JoinedChatroomList)}></Button>
             </div>
             <div className="right_side">
               <Button title="게임 찾기" onClick={()=>{}}></Button>
