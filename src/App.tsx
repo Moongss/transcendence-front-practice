@@ -20,10 +20,6 @@ function App() {
       <Route path="/setting" component={Setting}/>
       <Route path="/otp" component={OTP}/>
       <Route path="/register" component={Register}/>
-      {/* <Route exact path="/" component={Login}/>
-      <Route path="/main" component={Main}/>
-      <Route path="/register" component={Register}/>
-      <Route path="/game" component={Game}/> */}
     </div>
   );
 }
