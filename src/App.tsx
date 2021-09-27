@@ -12,19 +12,19 @@ import OTP from './auth/otp/otp';
 
 function App() {
   return (
-	<div className="app">
-    <Route exact path="/" component={Main}/>
-    <Route path="/main" component={Main}/>
-    <Route path="/profile" component={Profile}/>
-    <Route path="/game" component={Game}/>
-    <Route path="/setting" component={Setting}/>
-    <Route path="/otp" component={OTP}/>
-    <Route path="/register" component={Register}/>
-		{/* <Route exact path="/" component={Login}/>
-		<Route path="/main" component={Main}/>
-		<Route path="/register" component={Register}/>
-		<Route path="/game" component={Game}/> */}
-	</div>
+    <div className="app">
+      <Route exact path="/" component={Main}/>
+      <Route path="/main" component={Main}/>
+      <Route path="/profile" component={Profile}/>
+      <Route path="/game" component={Game}/>
+      <Route path="/setting" component={Setting}/>
+      <Route path="/otp" component={OTP}/>
+      <Route path="/register" component={Register}/>
+      {/* <Route exact path="/" component={Login}/>
+      <Route path="/main" component={Main}/>
+      <Route path="/register" component={Register}/>
+      <Route path="/game" component={Game}/> */}
+    </div>
   );
 }
 
